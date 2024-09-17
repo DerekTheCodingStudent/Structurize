@@ -1,3 +1,4 @@
 testerFunctions
 *.bin
+*.o
 .vscode

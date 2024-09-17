@@ -4,7 +4,7 @@ main_section:
     Welcome to Structurize! This tool is used to help you speed up the search on using a specific c-function!
 
 
-Output:
+Output_Functions:
   name: Output functions
   description: |
     Output functions that output to stdout or a file!
@@ -25,3 +25,11 @@ Output:
       return_code: |
         On success: the number of characters printed.
         On fail: a negative value.
+
+Input_Functions:
+
+File_Functions:
+
+C-Strings_Functions:
+
+Memory_Functions:

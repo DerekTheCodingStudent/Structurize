@@ -2,19 +2,27 @@
 #include <fstream>
 #include <string>
 
+#include "extractFunctions.h"
+
 using namespace std;
 
 int main(int argc, char* argv[]) {
 
-    ifstream file("main.yaml");
+    FILE *file = fopen("main.yaml","r");
 
-    string line = "";
+    char *line = NULL;
+    size_t buffer = 10;
 
-    while(getline(file, line)) {
-        cout << line << endl;
+    while(getline(&line, &buffer, file) != -1) {
+        if(line[0] != ' ') {
+            cout << line;
+        }
     }
 
-    file.close();
+    free(line);
+    fclose(file);
 
+    printEnums();
+    cout << "\n";
     return 0;
 }
