@@ -15,8 +15,9 @@ enum spaces {
 
 void printEnums();
 
-void find(char* line, char needle);
+int spaceChecker(char* line);
 
+void find(char* line, char needle);
 bool find(char* line, int &lengthBeforeColon, int &lengthAfterColon, int &spaceCounter, char needle);
 
 #endif

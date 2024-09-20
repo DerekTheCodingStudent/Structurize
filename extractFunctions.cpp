@@ -1,5 +1,5 @@
 #include "extractFunctions.h"
-#include "utils.cpp"
+#include "utils.h"
 
 void printEnums() {
     for(int i = ZERO; i <= SIX; i += 2) {
@@ -7,6 +7,23 @@ void printEnums() {
     }
 }
 
+// checks for how much spaces there is on a line.
+int spaceChecker(char* line) {
+    int i = 0;
+
+    while(line[i] == ' ') {
+        i++;
+    }
+
+    return i;
+}
+
+/* 
+Used to count up to the needle and get rid of it.
+
+Common use case for this function is: 
+    1. find(line, ':')
+*/
 void find(char* line, char needle) {
     int i = 0;
 
@@ -21,17 +38,12 @@ void find(char* line, char needle) {
 // If after a semicolon, it has a '|', then it is a multi-line extraction.
 bool find(char* line, int &lengthBeforeColon, int &lengthAfterColon, int &spaceCounter, char needle) {
     //int length = stringLength(line);
-    int i = 0;
+    int i = spaceChecker(line);
     /*
     for(int k = 0; k < length; k++) {
         printf("%d: %c\n", k, line[k]);
     }
     */
-
-    // checks for how much spaces there is on a line.
-    while(line[i] == ' ') {
-        i++;
-    }
 
     spaceCounter = i; 
 
