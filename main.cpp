@@ -3,7 +3,7 @@
 #include <string>
 
 #include "extractFunctions.h"
-
+#include "dataStructures.h"
 
 using namespace std;
 
@@ -22,6 +22,8 @@ int main(int argc, char* argv[]) {
     int currentSpaceCounter = -1;
     int previousSpaceCounter = -1;
     char *mainHeader = NULL;
+
+    topicHeadersLL *headers = new topicHeadersLL;
 
     while(getline(&line, &buffer, file) != -1) {
         // If a line is just a newline, then it will cause alot of errors in valgrind. 
